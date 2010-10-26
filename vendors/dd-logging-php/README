@@ -1,0 +1,11 @@
+Dragonfly Development PHP Logging Library
+http://dflydev.com/d2code/php/dd-logging-php/
+
+
+dd-logging provides a generic logging interface enabling PHP developers
+to enjoy some of the benefits provided Java users by way of the Apache
+Commons Logging library.
+
+
+Inspired by Apache Commons Logging
+http://commons.apache.org/logging/

@@ -1,0 +1,7 @@
+.buildpath
+.project
+.settings
+._*
+bootstrap-site-*
+*.site.properties
+.htaccess

@@ -1,0 +1,14 @@
+Lithe Web Application Framework for PHP
+http://lithe-php.org/
+
+
+Lithe is a lightweight web application framework for PHP. In reality, Lithe
+is actually a Halo reference implementation intended to bring people up to
+speed with building an application using Halo and Substrate.
+
+Substrate is an Inversion of Control/Dependency Injection Container (IoC/DI)
+for PHP. http://substrate-php.org/
+
+Halo is a web application framework built on Substrate. http://halo-php.org/
+
+Substrate and Halo were inspired by Spring.

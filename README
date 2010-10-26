@@ -1,0 +1,15 @@
+Lithe Web Application Framework for PHP - Multiple Sites Application
+http://lithe-php.org/
+
+
+Lithe is a lightweight web application framework for PHP. This is a template
+for a multiple site application.
+
+
+INSTALLATION
+
+To get started, copy .htaccess.example to .htaccess in both the root folder
+and in the sites/main/docroot/ folder.
+
+Beyond that, the default Lithe configuration should be sufficient to run the
+simple demo application.
