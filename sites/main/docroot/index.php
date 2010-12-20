@@ -11,6 +11,7 @@ define('LITHE_SITE_LIB_ROOT', LITHE_SITE_ROOT . '/lib');
 define('LITHE_SITE_CONFIG_ROOT', LITHE_SITE_ROOT . '/config');
 define('LITHE_SITE_CONTROLLERS_ROOT', LITHE_SITE_ROOT . '/controllers');
 define('LITHE_SITE_VIEWS_ROOT', LITHE_SITE_ROOT . '/views');
+define('LITHE_SITE_VENDORS_ROOT', LITHE_SITE_ROOT . '/vendors');
 
 require_once(LITHE_ROOT . '/bootstraps/bootstrap.php');
 
@@ -22,6 +23,7 @@ $context = new substrate_Context(array(
     'lithe_base.context.php',
     'app.context.php',
     'controllers.context.php',
+    'main.app.context.php',
     'main.controllers.context.php',
 ));
 
