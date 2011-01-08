@@ -26,9 +26,15 @@ if ( file_exists(LITHE_BOOTSTRAPS_ROOT . '/bootstrap-site-pre.php') ) {
 }
 
 // Standard locations for classes. (from specific site)
-$classpath[] = LITHE_SITE_LIB_ROOT;
-$classpath[] = LITHE_SITE_CONFIG_ROOT;
-$classpath[] = LITHE_SITE_CONTROLLERS_ROOT;
+if ( defined('LITHE_SITE_LIB_ROOT') {
+    $classpath[] = LITHE_SITE_LIB_ROOT;
+}
+if ( defined('LITHE_SITE_CONFIG_ROOT') {
+    $classpath[] = LITHE_SITE_CONFIG_ROOT;
+}
+if ( defined('LITHE_SITE_CONTROLLERS_ROOT') {
+    $classpath[] = LITHE_SITE_CONTROLLERS_ROOT;
+}
 
 // Standard locations for classes.
 $classpath[] = LITHE_LIB_ROOT;
