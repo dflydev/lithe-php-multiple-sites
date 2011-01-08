@@ -26,13 +26,13 @@ if ( file_exists(LITHE_BOOTSTRAPS_ROOT . '/bootstrap-site-pre.php') ) {
 }
 
 // Standard locations for classes. (from specific site)
-if ( defined('LITHE_SITE_LIB_ROOT') {
+if ( defined('LITHE_SITE_LIB_ROOT') ) {
     $classpath[] = LITHE_SITE_LIB_ROOT;
 }
-if ( defined('LITHE_SITE_CONFIG_ROOT') {
+if ( defined('LITHE_SITE_CONFIG_ROOT') ) {
     $classpath[] = LITHE_SITE_CONFIG_ROOT;
 }
-if ( defined('LITHE_SITE_CONTROLLERS_ROOT') {
+if ( defined('LITHE_SITE_CONTROLLERS_ROOT') ) {
     $classpath[] = LITHE_SITE_CONTROLLERS_ROOT;
 }
 
@@ -42,8 +42,9 @@ $classpath[] = LITHE_CONFIG_ROOT;
 $classpath[] = LITHE_CONTROLLERS_ROOT;
 
 if ( ! defined('LITHE_NO_VENDORS') ) {
-    foreach ( array(LITHE_SITE_VENDORS_ROOT, LITHE_VENDORS_ROOT) as $litheVendorsRoot ) {
-        if ( $dirHandle = opendir($litheVendorsRoot) ) {
+    $litheSiteVendorsRoot = defined('LITHE_SITE_VENDORS_ROOT') ? LITHE_SITE_VENDORS_ROOT : null;
+    foreach ( array($litheSiteVendorsRoot, LITHE_VENDORS_ROOT) as $litheVendorsRoot ) {
+        if ( $litheVendorsRoot and $dirHandle = opendir($litheVendorsRoot) ) {
             $vendorPaths = array();
             while ( ($potentialVendorDir = readdir($dirHandle)) !== false ) {
                 $potentialVendorPath = $litheVendorsRoot . DIRECTORY_SEPARATOR . $potentialVendorDir;
