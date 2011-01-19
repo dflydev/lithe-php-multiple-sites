@@ -16,6 +16,12 @@ require_once('halo_HelperUtil.php');
 class lithe_Controller implements lithe_IController, substrate_stones_IContextAware {
     
     /**
+     * Redirect URI
+     * @var string
+     */
+    protected $redirect = null;
+    
+    /**
      * Default view
      * Enter description here ...
      * @var string
@@ -31,7 +37,7 @@ class lithe_Controller implements lithe_IController, substrate_stones_IContextAw
     /**
      * Model data
      * Enter description here ...
-     * @var unknown_type
+     * @var lithe_Model
      */
     protected $model;
     
@@ -85,6 +91,10 @@ class lithe_Controller implements lithe_IController, substrate_stones_IContextAw
      * @return halo_ModelAndView
      */
     public function generateHaloModelAndView() {
+        if ( $this->redirect ) {
+            header('Location: ' . $this->redirect);
+            return null;
+        }
         $this->model->set('baseUri', $this->httpRequest->scriptPathRoot());
         return new halo_ModelAndView($this->view ? $this->view : $this->defaultView, $this->model->export());
     }

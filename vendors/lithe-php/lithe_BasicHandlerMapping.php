@@ -41,6 +41,7 @@ class lithe_BasicHandlerMapping extends halo_handler_AbstractHandlerMapping {
     protected function getHandlerInternal(halo_HttpRequest $httpRequest) {
 
         $requestedUri = $httpRequest->requestedUri();
+        $requestedUri = preg_replace('/^\/*/', '', $requestedUri);
         
         if ( ! $requestedUri ) {
             if ( $this->configuration->get('lithe.controllers.defaultHandlerMapping.defaultController') ) {

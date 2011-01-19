@@ -67,13 +67,27 @@ $context->add('lithe.views.defaultViewResolver', array(
 ));
 
 /**
- * Skittle view factor
+ * Skittle view factory
  */
 $context->add('lithe.views.skittle.viewFactory', array(
     'className' => 'halo_view_skittle_SkittleViewFactory',
     'constructorArgs' => array(
         'resourceLocator' => $context->ref('lithe.views.resourceLocator'),
     ),
+));
+
+/**
+ * Configuration Helper Factory
+ * 
+ * This gets us a URI helper that we can use to generate absolute
+ * and cross site URIs.
+ */
+$context->add('lithe.helpers.configurationHelperFactory', array(
+    'className' => 'halo_helper_ConfigurationHelperFactory',
+    'constructorArgs' => array(
+        'configuration' => $context->ref('configuration'),
+    ),
+    'lazyLoad' => false,
 ));
 
 /**
